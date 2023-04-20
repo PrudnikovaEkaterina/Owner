@@ -5,7 +5,7 @@ import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$;
 
-public class HelpInChoosing {
+public class HelpInChoosingModalWindow {
     private final SelenideElement APARTMENTQUIZMODALTITLE = $(".apartment-quiz-modal__title");
 
     public void verifyApartmentQuizModalTitle() {

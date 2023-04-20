@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.$x;
 import static com.codeborne.selenide.WebDriverRunner.url;
 
 public class Header {
-    HelpInChoosing helpInChoosing = new HelpInChoosing();
+    HelpInChoosingModalWindow helpInChoosingModalWindow = new HelpInChoosingModalWindow();
 
     private final SelenideElement
             NOVOSTROYKI = $x("//a[text()=' Новостройки ']"),
@@ -44,7 +44,7 @@ public class Header {
     }
 
     public void verifyApartmentQuizModalTitle() {
-        helpInChoosing.verifyApartmentQuizModalTitle();
+        helpInChoosingModalWindow.verifyApartmentQuizModalTitle();
     }
 
     public Header verifyColorAboutLinkHover() {
