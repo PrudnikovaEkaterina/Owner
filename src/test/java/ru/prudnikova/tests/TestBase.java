@@ -13,7 +13,7 @@ import ru.prudnikova.helpers.Attach;
 
 import java.util.Map;
 
-public class BaseTest {
+public class TestBase {
     @BeforeAll
     public static void setUp() {
         ProjectConfig projectConfig = ConfigCache.getOrCreate(ProjectConfig.class);

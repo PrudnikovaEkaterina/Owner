@@ -11,7 +11,7 @@ import ru.prudnikova.pages.components.Header;
 
 @DisplayName("Переход по ссылкам в header")
 
-public class HeaderLinkTests extends BaseTest {
+public class HeaderLinkTests extends TestBase {
     MainPage mainPage = new MainPage();
     Header header = new Header();
 
