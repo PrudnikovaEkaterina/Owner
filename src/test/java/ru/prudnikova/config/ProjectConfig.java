@@ -12,7 +12,7 @@ import org.aeonbits.owner.Config;
 public interface ProjectConfig extends Config { //интерфейс (это требуется для Owner) и расширяем ее для использования класса Config(этот класс делает большую часть магии Owner).
     //здесь перечислим все properties из файлов с расширением .properties
     @Key("baseUrl") //Если у вас есть составное имя, как у нас, url.base вы можете использовать @Config.Key аннотацию, чтобы связать свойство в general.properties файле с классом.
-    @DefaultValue("https://github.com/")
+    @DefaultValue("https://novo-estate.ru/")
     String baseUrl();
 
     @Key("browser")
