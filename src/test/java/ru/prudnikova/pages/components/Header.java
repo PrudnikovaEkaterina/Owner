@@ -4,8 +4,7 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.Assertions;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$x;
+import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.url;
 
 public class Header {
@@ -31,6 +30,7 @@ public class Header {
 
     public Header followingNovostroykiLink() {
         NOVOSTROYKI.click();
+        sleep(2000);
         return this;
     }
 
@@ -50,6 +50,7 @@ public class Header {
 
     public Header followingHelpInChoosingLink() {
         HELPINCHOOSING.click();
+        sleep(2000);
         return this;
     }
 
@@ -69,6 +70,7 @@ public class Header {
 
     public Header followingAboutLink() {
         ABOUT.click();
+        sleep(2000);
         return this;
     }
 
@@ -87,6 +89,7 @@ public class Header {
 
     public Header followingContactsLink() {
         CONTACTS.click();
+        sleep(2000);
         return this;
     }
 
@@ -105,6 +108,7 @@ public class Header {
 
     public Header followingSingInLink() {
         SIGNIN.click();
+        sleep(2000);
         return this;
     }
 
