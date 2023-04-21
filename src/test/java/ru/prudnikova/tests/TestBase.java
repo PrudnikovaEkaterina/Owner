@@ -30,7 +30,6 @@ public class TestBase {
                 "enableVideo", true));
         Configuration.browserCapabilities = capabilities;
     }
-
     @BeforeEach
     void addListener() {
         SelenideLogger.addListener("allure", new AllureSelenide());

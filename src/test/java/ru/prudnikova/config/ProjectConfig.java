@@ -28,7 +28,8 @@ public interface ProjectConfig extends Config { //интерфейс (это т�
     String browserSize();
 
     @Key("remote")
-    String  remote();}
+    String remote();
+}
 
 
 
