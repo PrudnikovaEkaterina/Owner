@@ -1,6 +1,6 @@
 package ru.prudnikova.pages.components;
 
-import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.Assertions;
 
@@ -20,7 +20,12 @@ public class Header {
 
 
     public Header verifyColorNovostroykiLinkHover() {
-        NOVOSTROYKI.hover().shouldHave(Condition.cssValue("color", "rgba(107, 109, 203, 1)"));
+        String color = NOVOSTROYKI.hover().getCssValue("color");
+        if (Configuration.browser.equals("chrome"))
+            Assertions.assertEquals("rgba(107, 109, 203, 1)", color);
+        else
+            Assertions.assertEquals("rgb(107, 109, 203)", color);
+
         return this;
     }
 
@@ -34,7 +39,12 @@ public class Header {
     }
 
     public Header verifyColorHelpInChoosingHover() {
-        HELPINCHOOSING.hover().shouldHave(Condition.cssValue("color", "rgba(107, 109, 203, 1)"));
+        String color = HELPINCHOOSING.hover().getCssValue("color");
+        if (Configuration.browser.equals("chrome"))
+            Assertions.assertEquals("rgba(107, 109, 203, 1)", color);
+        else
+            Assertions.assertEquals("rgb(107, 109, 203)", color);
+
         return this;
     }
 
@@ -48,7 +58,12 @@ public class Header {
     }
 
     public Header verifyColorAboutLinkHover() {
-        ABOUT.hover().shouldHave(Condition.cssValue("color", "rgba(107, 109, 203, 1)"));
+        String color = ABOUT.hover().getCssValue("color");
+        if (Configuration.browser.equals("chrome"))
+            Assertions.assertEquals("rgba(107, 109, 203, 1)", color);
+        else
+            Assertions.assertEquals("rgb(107, 109, 203)", color);
+
         return this;
     }
 
@@ -62,7 +77,11 @@ public class Header {
     }
 
     public Header verifyColorContactsLinkHover() {
-        CONTACTS.hover().shouldHave(Condition.cssValue("color", "rgba(107, 109, 203, 1)"));
+        String color = CONTACTS.hover().getCssValue("color");
+        if (Configuration.browser.equals("chrome"))
+            Assertions.assertEquals("rgba(107, 109, 203, 1)", color);
+        else
+            Assertions.assertEquals("rgb(107, 109, 203)", color);
         return this;
     }
 
@@ -76,7 +95,11 @@ public class Header {
     }
 
     public Header verifyColorSingInLinkHover() {
-        SIGNIN.hover().shouldHave(Condition.cssValue("color", "rgba(84, 83, 179, 1)"));
+        String color = SIGNIN.hover().getCssValue("color");
+        if (Configuration.browser.equals("chrome"))
+            Assertions.assertEquals("rgba(84, 83, 179, 1)", color);
+        else
+            Assertions.assertEquals("rgb(84, 83, 179)", color);
         return this;
     }
 
