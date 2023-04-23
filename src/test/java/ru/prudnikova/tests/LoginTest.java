@@ -22,9 +22,11 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import static com.codeborne.selenide.Selenide.*;
+import static io.qameta.allure.Allure.step;
 
 public class LoginTest {
-    AuthPage authPage =new AuthPage();
+    AuthPage authPage = new AuthPage();
+
     @AfterEach
     void addAttachments() {
         Attach.screenshotAs("Last screenshot");
@@ -36,18 +38,14 @@ public class LoginTest {
     @Test
     void loginTest() throws IOException {
         SelenideLogger.addListener("allure", new AllureSelenide().includeSelenideSteps(false));
-        Configuration.remote="https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
         AuthConfig config = ConfigCache.getOrCreate(AuthConfig.class);
-        String phone=config.phone();
+        String phone = config.phone();
         String password = config.password();
-
-        open("https://master.dev.novo-estate.ru/");
-        $(".one-column-header__account-text").click();
-        authPage.setPhone(phone).clickCheckbox().clickButtonSendCode().setPassword(password);
-
-
-
-
+        step("Открыть главную страницу", () -> open("https://master.dev.novo-estate.ru/"));
+        step("Кликнуть по ссылке Войти", () -> $(".one-column-header__account-text").click());
+        step("Ввести логин и пароль", () -> authPage.setPhone(phone).clickCheckbox()
+                .clickButtonSendCode().setPassword(password));
 
 
     }
