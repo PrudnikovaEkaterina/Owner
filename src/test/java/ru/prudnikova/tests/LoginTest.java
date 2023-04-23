@@ -22,6 +22,7 @@ public class LoginTest {
 
     @Test
     void loginTest() throws IOException {
+        Configuration.remote="https://user1:1234@selenoid.autotests.cloud/wd/hub";
         AuthConfig config = ConfigCache.getOrCreate(AuthConfig.class);
         String phone=config.phone();
         String password = config.password();
