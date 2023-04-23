@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 import ru.prudnikova.config.AuthConfig;
 import ru.prudnikova.config.ProjectConfig;
 import ru.prudnikova.helpers.Attach;
+import ru.prudnikova.pages.AuthPage;
 import ru.prudnikova.pages.MainPage;
 
 import java.io.IOException;
@@ -23,6 +24,7 @@ import java.nio.file.Paths;
 import static com.codeborne.selenide.Selenide.*;
 
 public class LoginTest {
+    AuthPage authPage =new AuthPage();
     @BeforeEach
     void addListener() {
         SelenideLogger.addListener("allure", new AllureSelenide());
@@ -44,10 +46,9 @@ public class LoginTest {
 
         open("https://master.dev.novo-estate.ru/");
         $(".one-column-header__account-text").click();
-        $x("//input[@type='tel']").setValue(phone);
-        $(".el-checkbox__inner").click();
-        $x("//span[text()='Отправить код для входа ']").click();
-        $x("//input[@type='text']").setValue(password);
+        authPage.setPhone(phone).clickCheckbox().clickButtonSendCode().setPassword(password);
+
+
 
 
 
