@@ -25,10 +25,6 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class LoginTest {
     AuthPage authPage =new AuthPage();
-    @BeforeEach
-    void addListener() {
-        SelenideLogger.addListener("allure", new AllureSelenide());
-    }
     @AfterEach
     void addAttachments() {
         Attach.screenshotAs("Last screenshot");
@@ -39,6 +35,7 @@ public class LoginTest {
 
     @Test
     void loginTest() throws IOException {
+        SelenideLogger.addListener("allure", new AllureSelenide().includeSelenideSteps(false));
         Configuration.remote="https://user1:1234@selenoid.autotests.cloud/wd/hub";
         AuthConfig config = ConfigCache.getOrCreate(AuthConfig.class);
         String phone=config.phone();
