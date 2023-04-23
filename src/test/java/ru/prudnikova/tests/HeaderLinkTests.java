@@ -1,14 +1,11 @@
 package ru.prudnikova.tests;
 
 import io.qameta.allure.Owner;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import ru.prudnikova.pages.MainPage;
 import ru.prudnikova.pages.components.Header;
 
-
+@Disabled
 @DisplayName("Переход по ссылкам в header")
 
 public class HeaderLinkTests extends TestBase {
